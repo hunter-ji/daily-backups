@@ -1,0 +1,2 @@
+## My daily backup.
+* zshrc
