@@ -8,7 +8,7 @@ from urllib.parse import quote
 class GetMusic:
 
     def __init__(self, path):
-        self.path = path
+        self.path = "http://" + path
 
     def getID(self, song):
         path = self.path + "/search?keywords=" + quote(song)
@@ -38,7 +38,6 @@ class GetMusic:
 
 
 if __name__ == "__main__":
-    ip = <--ip-->
-    ip = "http://" + ip
+    ip = "120.27.4.161:3000"
     g = GetMusic(ip)
     g.player(sys.argv[1])
