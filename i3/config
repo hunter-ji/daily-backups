@@ -47,6 +47,9 @@ bindsym $mod+F1 exec amixer set Master toggle
 # start the firefox
 bindsym $mod+Shift+f exec firefox
 
+# start slack
+bindsym $mod+Control+k exec slack
+
 # start the win10
 bindsym $mod+Shift+v exec VBoxManage startvm "win10" --type gui
 
@@ -61,11 +64,14 @@ bindsym $mod+Control+w exec wps
 bindsym $mod+Control+e exec et
 bindsym $mod+Control+p exec wpp
 
-# libreoffice
-bindsym $mod+Control+l exec libreoffice
+# thunderbird
+bindsym $mod+Control+t exec thunderbird
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# steam
+bindsym $mod+Control+s exec steam
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -186,6 +192,9 @@ assign [class="Et"] $ws6
 assign [class="Wpp"] $ws6
 assign [class="Libreoffice"] $ws6
 assign [class="Virtualbox"] $ws9
+assign [class="Steam"] $ws5
+assign [class="Thunderbird"] $ws7
+assign [class="Slack"] $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
