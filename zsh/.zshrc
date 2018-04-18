@@ -2,14 +2,20 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/home/kuari/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
-#ZSH_THEME="avit"
 
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,7 +59,9 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,11 +93,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-autoload -U compinit
-compinit
-zstyle ':completion:*' menu select
-setopt completealiases
-alias gg='bash /home/kuari/.chrome.sh'
+alias wifikuari="./scripts/wifi_kuari.sh"
+alias wificonnect="python ~/scripts/wifi_connect.py"
+alias ccd="cd && clear"
+alias bd='ping -c 3 www.baidu.com'
+alias ff='firefox --new-tab'
+alias pw='python2 -m SimpleHTTPServer'
+alias update='python ~/scripts/update_justmylife.py'
+alias ssk='bash ~/scripts/ss_k.sh'
+alias trans='python ~/scripts/trans.py'
+alias createflaskr='cp -rf ~/code_template/web/flask/db_option'
+alias alsa='alsamixer'
+
+setopt HIST_IGNORE_DUPS
+
+ttyctl -f
+
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
   dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
@@ -109,37 +128,4 @@ setopt pushdignoredups
 ## This reverts the +/- operators.
 setopt pushdminus
 
-source ~/.bash_profile
-alias gg='bash /home/kuari/.chrome.sh'
-alias hosts='bash /home/kuari/jiaoben/getGoogle.sh'
-alias c='clear'
-#alias cp='cp -i'
-#alias rm='rm -i'
-alias baidu='ping -c 3 www.baidu.com'
-alias chrome='google-chrome &'
-alias vb='virtualbox &'
-alias firefox='firefox &'
-alias sq='ss-qt5 &'
-alias music='netease-cloud-music &'
-alias tor='sudo docker start tor-browser'
-alias ccd='cd && clear'
-alias update='python ~/jiaoben/web.py'
-alias ssh_tx='ssh root@115.159.197.212'
-alias ssh_al='ssh root@120.27.4.161'
-alias pw='python -m SimpleHTTPServer' 
-alias startwp='docker start wp-mysql && docker start wordpress'
-alias gonode="docker start nodejs && docker exec -it nodejs bash"
-alias cmcc="python ~/jiaoben/AUTO_CCIT_CMCC.py"
-alias janet="python /home/kuari/jiaoben/to_janat.py"
-alias shot="gnome-screenshot"
-alias pipi="python ~/jiaoben/find_PI_python2.py"
-
-
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-ttyctl -f
-
-#自动刷新
-zstyle ':completion:*' rehash true
-
-setopt HIST_IGNORE_ALL_DUPS
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
