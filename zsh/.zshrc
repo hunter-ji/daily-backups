@@ -8,7 +8,8 @@ export ZSH=/home/kuari/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="bullet-train"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -102,7 +103,8 @@ alias pw='python2 -m SimpleHTTPServer'
 alias update='python ~/scripts/update_justmylife.py'
 alias ssk='bash ~/scripts/ss_k.sh'
 alias trans='python ~/scripts/trans.py'
-alias createflaskr='cp -rf ~/code_template/web/flask/db_option'
+alias createflaskr='cp -rf ~/code_template/web/flask/module/'
+alias createsimpleflaskr='cp -rf ~/code_template/web/simpleflask'
 alias alsa='alsamixer'
 
 setopt HIST_IGNORE_DUPS
